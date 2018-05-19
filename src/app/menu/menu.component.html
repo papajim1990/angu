@@ -1,0 +1,30 @@
+
+
+
+<div class="container" fxLayout="column" fxLayoutGap="40px">
+
+    <div fxFelx>
+<div>
+  <h3>Menu Items</h3>
+  <hr>
+</div>
+      </div>
+
+
+
+<mat-grid-list fxFlex  cols="{{ dishes.length }}" >
+
+  <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)" >
+      <img src="../assets/777.jpg"/>
+
+ 
+  <mat-grid-tile-header>
+      {{dish.name}}
+  </mat-grid-tile-header>
+  <mat-grid-tile-footer></mat-grid-tile-footer>
+</mat-grid-tile>
+</mat-grid-list>
+
+
+</div>
+<app-dishdetail *ngIf="selectedDish" [dishes]="selectedDish"></app-dishdetail>
