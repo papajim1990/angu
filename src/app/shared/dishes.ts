@@ -8,6 +8,8 @@ export const dishess: Dish[]=
     category: 'mains',
     label: 'Hot',
     price: '4.99',
+    id:0,
+    feautured:true,
     description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
     comment: [
       {
@@ -49,6 +51,8 @@ export const dishess: Dish[]=
     category: 'mains',
     label: 'Hot',
     price: '4.99',
+    id:1,
+    feautured:false,
     description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
     comment: [
       {

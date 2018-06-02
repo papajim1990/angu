@@ -1,6 +1,8 @@
 import { Comments } from "./Comments";
 
 export class Dish{
+    id:number;
+    feautured:boolean;
     name:string;
     price:string;
     description:string;

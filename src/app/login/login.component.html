@@ -1,0 +1,30 @@
+<div class="example-container">
+  <p>{{user | json}}</p>
+    <form novalidate class="example-form" (ngSubmit)="onSubmit()" #LoginForm="ngForm">
+        <mat-form-field class="example-full-width">
+          <input required name="username" [(ngModel)]="user.username" #username="ngModel" matInput placeholder="Username" >
+          <mat-hint>
+              <span [hidden]="username.dirty"></span>
+              <span [hidden]="!username.errors?.required">username is required</span>
+            </mat-hint>
+        </mat-form-field>
+ 
+        <mat-form-field class="example-full-width">
+          <input required name="password" [(ngModel)]="user.password" #password="ngModel" matInput placeholder="Password" type="text">
+          <mat-hint>
+              <span [hidden]="password.pristine"></span>
+              <span style="color:red" [hidden]="!password.errors?.required">username is required</span>
+            </mat-hint>
+        </mat-form-field>
+        <mat-checkbox name="remember" [(ngModel)]="user.Remember" >
+          Remember me
+        </mat-checkbox>
+        <mat-dialog-actions>
+            <button [disabled]="LoginForm.form.invalid" type="submit" mat-button>Submit</button>
+            <button mat-button mat-dialog-close>Close</button>
+
+        </mat-dialog-actions>
+      </form>
+
+  </div>
+  

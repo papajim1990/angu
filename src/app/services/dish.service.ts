@@ -10,4 +10,10 @@ export class DishService {
   getDishes(): Dish[]{
   return dishess;
   }
+  getDish(id : number): Dish{
+    return dishess.filter((dish) => (dish.id === id))[0];
+    }
+    getFeaturedDish(): Dish[]{
+      return dishess.filter((dish) => (dish.feautured === true));
+      }
 }
