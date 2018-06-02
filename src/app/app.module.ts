@@ -26,6 +26,10 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +57,9 @@ import { LoginComponent } from './login/login.component';
     MatIconModule,
     MatDialogModule,
     AppRoutingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSlideToggleModule,MatSelectModule
   ],
   providers: [DishService,PromotionService,LeadersService],
   entryComponents:[LoginComponent],

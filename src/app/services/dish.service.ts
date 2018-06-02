@@ -7,13 +7,13 @@ import {dishess} from "../shared/dishes";
 export class DishService {
 
   constructor() { }
-  getDishes(): Dish[]{
-  return dishess;
+  getDishes(): Promise<Dish[]>{
+  return Promise.resolve(dishess);
   }
-  getDish(id : number): Dish{
-    return dishess.filter((dish) => (dish.id === id))[0];
+  getDish(id : number): Promise<Dish>{
+    return  Promise.resolve(dishess.filter((dish) => (dish.id === id))[0]);
     }
-    getFeaturedDish(): Dish[]{
-      return dishess.filter((dish) => (dish.feautured === true));
+    getFeaturedDish(): Promise<Dish[]>{
+      return  Promise.resolve(dishess.filter((dish) => (dish.feautured === true)));
       }
 }

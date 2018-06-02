@@ -11,7 +11,7 @@ export class ContactComponent implements OnInit {
   constructor(private leaderService:LeadersService) { }
 
   ngOnInit() {
-    this.leader=this.leaderService.getPromotions();
+    this.leaderService.getPromotions().then(leader=>this.leader=leader);
   }
 
 }
