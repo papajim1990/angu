@@ -29,7 +29,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +59,7 @@ import {MatSelectModule} from '@angular/material/select';
     AppRoutingModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatSlideToggleModule,MatSelectModule
+    MatSlideToggleModule,MatSelectModule,MatProgressSpinnerModule
   ],
   providers: [DishService,PromotionService,LeadersService],
   entryComponents:[LoginComponent],
