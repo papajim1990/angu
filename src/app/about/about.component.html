@@ -6,18 +6,30 @@
         <mat-form-field class="example-half-width">
             <input required name="firstname" matInput formControlName="firstname" placeholder="Username" >
           <mat-hint>
-            <span [hidden]="!(feedbackForm.get('firstname').hasError('required') && feedbackForm.get('firstname').touched)">firstname is required</span>
+            <span [hidden]="!formErrors.firstname">{{formErrors.firstname}}</span>
           </mat-hint>
           </mat-form-field>
         <mat-form-field class="example-half-width">
             <input required name="lastname" matInput formControlName="lastname" placeholder="Username" >
-        </mat-form-field>
+            <mat-hint>
+              <span [hidden]="!formErrors.lastname">{{formErrors.lastname}}</span>
+            </mat-hint>
+          </mat-form-field>
+       
         <mat-form-field class="example-half-width">
             <input required name="telnum" matInput formControlName="telnum" placeholder="Telephone Number" >
-        </mat-form-field>
+            <mat-hint>
+              <span [hidden]="!formErrors.telnum">{{formErrors.telnum}}</span>
+            </mat-hint>
+          </mat-form-field>
+      
         <mat-form-field class="example-half-width">
-            <input required name="email" matInput formControlName="email" placeholder="Email" type="email" >
-        </mat-form-field>
+            <input required name="email" matInput formControlName="email" placeholder="Email" email type="email" >
+            <mat-hint>
+              <span [hidden]="!formErrors.email">{{formErrors.email}}</span>
+            </mat-hint>
+          </mat-form-field>
+       
     </p>
     <table class="form-size">
 
@@ -40,6 +52,6 @@
         <textarea matInput formControlName="message" placeholder="your message" rows=12 ></textarea>
       </mat-form-field>
     </p>
-    <button  mat-button type="submit" class="background-primary">submit</button>
+    <button [disabled]="!feedbackForm.valid"  mat-button type="submit" class="background-primary">submit</button>
   </form>
 </div>

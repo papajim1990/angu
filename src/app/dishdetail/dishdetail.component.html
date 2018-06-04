@@ -6,17 +6,18 @@
     fxLayoutAlign.gt-md="space-around center"
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
-
   <div fxFlex="40">
       <mat-card *ngIf="dishes">
           <mat-card-title>{{dishes.name | uppercase}}</mat-card-title>
           <img  mat-card-image src="{{dishes.image}}"/>
           <mat-card-content>{{dishes.description}}</mat-card-content>
-          <mat-card-actions><button mat-button (click)="goBack()" >back</button><button mat-button>Like</button><button mat-button>Share</button></mat-card-actions>
+          <mat-card-actions>
+              <button mat-button [routerLink]="['/dishdetail',prev]" >back</button>
+            <button mat-button (click)="goBack()" >back</button><button mat-button>Like</button><button mat-button>Share</button></mat-card-actions>
         </mat-card>
   </div>
 
-  <div fxFlex="40">
+  <div fxFlex="40" *ngIf="dishes">
     <h3>Comments</h3>
       <mat-list *ngFor="let com of dishes.comment">
           <mat-list-item> {{com.comment}} </mat-list-item>
